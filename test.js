@@ -1,33 +1,32 @@
-class NitroBlock2 {
-    getInfo() {
+// Core, Team, and Official extensions can `require` VM code:
+const ArgumentType = require('../../extension-support/argument-type');
+const BlockType = require('../../extension-support/block-type');
+
+class SomeBlocks {
+    // ...
+    getInfo () {
         return {
-            "id": "NitroBlock2",
-            "name": "NitroBlock2",
-            "blocks": [{
-                    "opcode": "substringy222",
-                    "blockType": "reporter",
-                    "text": "lettera da [num1] a [num2] di [string]",
-                    "arguments": {
-                        "num1": {
-                            "type": "number",
-                            "defaultValue": "2"
+            id: 'someBlocks',
+            name: 'Some Blocks',
+            blocks: [
+                {
+                    opcode: 'myReporter',
+                    blockType: BlockType.REPORTER,
+                    text: 'letter [LETTER_NUM] of [TEXT]',
+                    arguments: {
+                        LETTER_NUM: {
+                            type: ArgumentType.STRING,
+                            defaultValue: '1'
                         },
-                        "num2": {
-                            "type": "number",
-                            "defaultValue": "5"
-                        },
-                        "string": {
-                            "type": "string",
-                            "defaultValue": "gino e pino"
+                        TEXT: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'text'
                         }
                     }
-                },
-            }],
-        "menus": { //we will get back to this in a later tutorial
-        }
-    };
-    substringy222({num1, num2, string}) {
-        return string.substring(num1 - 1, num2);
-    };
+                }
+            ]
+        };
+    }
+    // ...
 }
-Scratch.extensions.register(new NitroBlock2());
+Scratch.extensions.register(new SomeBlocks());
