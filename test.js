@@ -4,7 +4,7 @@ class NitroBlock2 {
             "id": "NitroBlock2",
             "name": "NitroBlock2",
             "blocks": [{
-                    "opcode": "substringy",
+                    "opcode": "substringy222",
                     "blockType": "reporter",
                     "text": "lettera da [num1] a [num2] di [string]",
                     "arguments": {
@@ -18,7 +18,7 @@ class NitroBlock2 {
                         },
                         "string": {
                             "type": "string",
-                            "defaultValue": "hello world"
+                            "defaultValue": "gino e pino"
                         }
                     }
                 },
@@ -26,7 +26,7 @@ class NitroBlock2 {
         "menus": { //we will get back to this in a later tutorial
         }
     };
-    substringy({num1, num2, string}) {
+    substringy222({num1, num2, string}) {
         return string.substring(num1 - 1, num2);
     };
 }
