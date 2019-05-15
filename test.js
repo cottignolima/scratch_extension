@@ -6,7 +6,7 @@ class NitroBlock2 {
             "blocks": [{
                     "opcode": "substringy",
                     "blockType": "reporter",
-                    "text": "letters [num1] through [num2] of [string]",
+                    "text": "lettera da [num1] a [num2] di [string]",
                     "arguments": {
                         "num1": {
                             "type": "number",
