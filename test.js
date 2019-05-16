@@ -26,6 +26,7 @@ class NitroBlock2 {
         "menus": { //we will get back to this in a later tutorial
         }
     };
+    }//getInfo
     substringy222({num1, num2, string}) {
         return string.substring(num1 - 1, num2);
     };
