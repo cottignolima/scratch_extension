@@ -21,7 +21,6 @@ class NitroBlockAAA {
                             "defaultValue": "hello world"
                         }
                     }
-                },
             }],
         "menus": { //we will get back to this in a later tutorial
         }
