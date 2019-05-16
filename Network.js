@@ -46,7 +46,7 @@ class Network {
 		    value = map[key];
 		    s+=value;
 		});
-		return s;
+		return "COORD: "+s;
     };
 }
 Scratch.extensions.register(new Network());
