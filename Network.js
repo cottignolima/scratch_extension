@@ -40,7 +40,13 @@ class Network {
     debugstring() {
         const sprites = vm.targets.filter(target => !target.isStage);
         const data = sprites.map(sprite => ({x: sprite.x, y: sprite.x}));
-        return data;
+        var value;
+		var s = "";
+		Object.keys(data).forEach(function(key) {
+		    value = map[key];
+		    s+=value;
+		});
+		return s;
     };
 }
 Scratch.extensions.register(new Network());
