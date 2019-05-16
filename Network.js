@@ -39,7 +39,7 @@ class Network {
     };
     debugstring() {
         const sprites = vm.targets.filter(target => !target.isStage);
-        const data = sprites.map(sprite => ({x: sprite.x, y: sprite.x});
+        const data = sprites.map(sprite => ({x: sprite.x, y: sprite.x}));
         return data;
     };
 }
