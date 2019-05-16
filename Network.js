@@ -43,7 +43,9 @@ class Network {
         var value;
 		var s = "";
 		Object.keys(data).forEach(function(key) {
+			console.log("k: "+key)
 		    value = map[key];
+			console.log("v: "+value)
 		    s+=value;
 		});
 		return "COORD: "+s;
