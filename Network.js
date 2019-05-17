@@ -38,7 +38,7 @@ class Network {
         return string.substring(num1 - 1, num2);
     };
     debugstring() {
-        const sprites = vm.targets.filter(target => !target.isStage);
+        const sprites = vm.runtime.targets.filter(target => !target.isStage);
         const data = sprites.map(sprite => ({x: sprite.x, y: sprite.y}));
 	//    console.log(data);
         //s = JSON.stringify(data);
