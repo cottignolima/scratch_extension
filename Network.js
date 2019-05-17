@@ -40,9 +40,9 @@ class Network {
     debugstring() {
         const sprites = vm.targets.filter(target => !target.isStage);
         const data = sprites.map(sprite => ({x: sprite.x, y: sprite.x}));
-	    console.log(data);
-        s = JSON.stringify(data);
-	return "COORD: "+s;
+	//    console.log(data);
+        //s = JSON.stringify(data);
+	return "COORD: ";//+s;
     };
 }
 Scratch.extensions.register(new Network());
