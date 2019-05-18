@@ -1,7 +1,5 @@
 class Network {
-	
-	
-	
+
 	getInfo() {
 		return {
 			"id": "Network",
@@ -16,7 +14,7 @@ class Network {
 				},
 				{
 					"opcode": "open",
-					"blockType": "BlockType.COMMAND",
+					"blockType": "command",
 					"text": "address",
 					"arguments": {
 						"addr": {
