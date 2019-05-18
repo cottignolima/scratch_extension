@@ -52,6 +52,8 @@ class Network {
 	}	
 
 	webAvailable(){
+		console.log("jkhjkhkjh");
+		alert("available");
 		return "WebSocket" in window;
 	}
 
