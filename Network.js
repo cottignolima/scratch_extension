@@ -1,5 +1,7 @@
 class Network {
 
+
+
 	getInfo() {
 		return {
 			"id": "Network",
@@ -56,32 +58,35 @@ class Network {
 	open(addr){
 		// Let us open a web socket
 		this.ws = new WebSocket("ws://"+addr);
+		ws.onopen = function() {
+            
+            // Web Socket is connected, send data using send()
+            ws.send("Message to send");
+            alert("Message is sent...");
+         };
+			
+         ws.onmessage = function (evt) { 
+            var received_msg = evt.data;
+            alert("Message is received...");
+         };
+			
+         ws.onclose = function() { 
+            
+            // websocket is closed.
+            alert("Connection is closed..."); 
+         };
 	}
 
-	onopen(){
-		console.log(this.ws);
-		console.log(ws);
-		ws.onopen = function() {
+	onopen(msg){
 
-			// Web Socket is connected, send data using send()
-			ws.send("Message to send");
-			alert("Message is sent...");
-		};
 	}
 
 	onmessage(){
-		ws.onmessage = function (evt) { 
-			var received_msg = evt.data;
-			alert("Message is received...");
-		};
+		
 	}
 
 	onclose(){
-		ws.onclose = function() { 
-
-			// websocket is closed.
-			alert("Connection is closed..."); 
-		};
+		
 	}
 
 	sendcoord({id, x, y}) {
