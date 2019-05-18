@@ -21,7 +21,7 @@ class Network {
 					"arguments": {
 						"addr": {
 							"type": "string",
-							"defaultValue": "localhost:9999"
+							"defaultValue": "localhost:9001"
 						}
 					}
 				},
