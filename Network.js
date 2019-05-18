@@ -16,7 +16,7 @@ class Network {
 				},
 				{
 					"opcode": "open",
-					"blockType": "reporter",
+					"blockType": "BlockType.COMMAND",
 					"text": "address",
 					"arguments": {
 						"addr": {
