@@ -1,6 +1,6 @@
 class Network {
 	
-	var ws;
+	
 	
 	getInfo() {
 		return {
@@ -57,10 +57,12 @@ class Network {
 
 	open(addr){
 		// Let us open a web socket
-		ws = new WebSocket("ws://"+addr);
+		this.ws = new WebSocket("ws://"+addr);
 	}
 
 	onopen(){
+		console.log(this.ws);
+		console.log(ws);
 		ws.onopen = function() {
 
 			// Web Socket is connected, send data using send()
