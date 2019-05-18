@@ -15,7 +15,7 @@ class Network {
 				{
 					"opcode": "open",
 					"blockType": "command",
-					"text": "address",
+					"text": "address [addr]",
 					"arguments": {
 						"addr": {
 							"type": "string",
