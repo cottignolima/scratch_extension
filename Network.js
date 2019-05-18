@@ -23,11 +23,24 @@ class Network {
                     }
             },
             {
-                    "opcode": "debugstring",
+                    "opcode": "sendcoord",
                     "blockType": "reporter",
-                    "text": "coord",
-                    "arguments": {}
-            }
+                    "text": "id [string] x: [num1] y: [num2]",
+                    "arguments": {
+                        "num1": {
+                            "type": "number",
+                            "defaultValue": "0"
+                        },
+                        "num2": {
+                            "type": "number",
+                            "defaultValue": "0"
+                        },
+                        "string": {
+                            "type": "string",
+                            "defaultValue": "hello world"
+                        }
+                    }
+            },
             
             ],
         "menus": { //we will get back to this in a later tutorial
@@ -37,12 +50,12 @@ class Network {
     substringy({num1, num2, string}) {
         return string.substring(num1 - 1, num2);
     };
-    debugstring() {
-        const sprites = vm.runtime.targets.filter(target => !target.isStage);
-        const data = sprites.map(sprite => ({x: sprite.x, y: sprite.y}));
+    sendcoord({string, num1, num2}) {
+        //const sprites = vm.runtime.targets.filter(target => !target.isStage);
+        //const data = sprites.map(sprite => ({x: sprite.x, y: sprite.y}));
 	//    console.log(data);
         //s = JSON.stringify(data);
-	return "COORD: ";//+s;
+	return JSON.stringify({string, num1, num2});
     };
 }
 Scratch.extensions.register(new Network());
