@@ -60,7 +60,9 @@ class Network {
 
 	open(addr){
 		// Let us open a web socket
+		console.log("1111");
 		this.ws = new WebSocket("ws://"+addr);
+		console.log("2222");
 		ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
