@@ -62,11 +62,11 @@ class Network {
 		console.log("bbbbbb");
 		this.ws=myws;
 		console.log("cccccc");
-		ws.onopen = function() {
+		this.ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
 			console.log("mando messaggio");
-            ws.send("Message to send");
+            this.ws.send("Message to send");
             console.log("Message is sent...");
 
             alert("Message is sent...");
@@ -74,13 +74,13 @@ class Network {
 		
 		console.log("dddddddd");
 			
-         ws.onmessage = function (evt) { 
+         this.ws.onmessage = function (evt) { 
             var received_msg = evt.data;
             console.log("received_msg: "+received_msg);
             alert("Message is received...");
          };
 			
-         ws.onclose = function() { 
+         this.ws.onclose = function() { 
             
             // websocket is closed.
             alert("Connection is closed..."); 
