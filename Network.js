@@ -21,7 +21,7 @@ class Network {
 					"arguments": {
 						"addr": {
 							"type": "string",
-							"defaultValue": "localhost:9001"
+							"defaultValue": "localhost:8083"
 						}
 					}
 				},
@@ -58,7 +58,7 @@ class Network {
 	open(addr){
 		// Let us open a web socket
 		console.log("aaaaaaa");
-		const myws = new WebSocket("ws://localhost:8083");
+		const myws = new WebSocket("ws://"+addr");
 		console.log("bbbbbb");
 		this.ws=myws;
 		console.log("cccccc");
