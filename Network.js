@@ -65,11 +65,14 @@ class Network {
 		ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
+			console.log("mando messaggio");
             ws.send("Message to send");
             console.log("Message is sent...");
 
             alert("Message is sent...");
          };
+		
+		console.log("dddddddd");
 			
          ws.onmessage = function (evt) { 
             var received_msg = evt.data;
