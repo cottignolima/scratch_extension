@@ -57,7 +57,8 @@ class Network {
 
 	open(addr){
 		// Let us open a web socket
-		this.ws = new WebSocket("ws://"+addr);
+		const ws = new WebSocket("ws://"+addr);
+		this.ws=ws;
 		ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
