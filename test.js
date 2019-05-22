@@ -1,4 +1,6 @@
-class NitroBlockAAA {
+const JSONRPCWebSocket = require('../util/jsonrpc-web-socket');
+
+class NitroBlockAAA extends JSONRPCWebSocket{
     getInfo() {
         return {
             "id": "NitroBlockAAA",
