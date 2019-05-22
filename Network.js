@@ -59,7 +59,7 @@ class Network {
 	open(addr){
 		// Let us open a web socket
 		console.log("1111");
-		const ws = new WebSocket("ws://localhost:9001");
+		const ws = new WebSocket("ws://"+addr);
 		console.log("2222");
 		this.ws=ws;
 		ws.onopen = function() {
@@ -71,6 +71,8 @@ class Network {
 			
          ws.onmessage = function (evt) { 
             var received_msg = evt.data;
+		 		console.log("received_msg: "+received_msg);
+
             alert("Message is received...");
          };
 			
