@@ -7,6 +7,11 @@ constructor (runtime) {
          * @type {Runtime}
          */
         this.runtime = runtime;
+	console.log("AAAA");
+	const ws = new WebSocket("ws://localhost:9001");
+	console.log("BBBB");
+	this.ws=ws;
+	
     }
 
 	getInfo() {
@@ -68,7 +73,7 @@ constructor (runtime) {
 	open(addr){
 		// Let us open a web socket
 		console.log("1111");
-		this.ws = new WebSocket("ws://"+addr);
+		this.ws = new WebSocket("ws://localhost:9001);
 		console.log("2222");
 		ws.onopen = function() {
             
