@@ -1,19 +1,5 @@
 class Network {
 
-constructor (runtime) {
-        /**
-         * Store this for later communication with the Scratch VM runtime.
-         * If this extension is running in a sandbox then `runtime` is an async proxy object.
-         * @type {Runtime}
-         */
-        this.runtime = runtime;
-	console.log("AAAA");
-	const ws = new WebSocket("ws://localhost:9001");
-	console.log("BBBB");
-	this.ws=ws;
-	
-    }
-
 	getInfo() {
 		return {
 			"id": "Network",
