@@ -58,7 +58,7 @@ class Network {
 	open(addr){
 		// Let us open a web socket
 		console.log("aaaaaaa");
-		const myws = new WebSocket("ws://localhost:9001");
+		const myws = new WebSocket("ws://localhost:8083");
 		console.log("bbbbbb");
 		this.ws=myws;
 		console.log("cccccc");
