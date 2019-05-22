@@ -61,6 +61,7 @@ class Network {
 		console.log("1111");
 		const ws = new WebSocket("ws://localhost:9001);
 		console.log("2222");
+		this.ws=ws;
 		ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
