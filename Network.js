@@ -1,5 +1,7 @@
 class Network {
 
+
+
 	getInfo() {
 		return {
 			"id": "Network",
@@ -19,7 +21,7 @@ class Network {
 					"arguments": {
 						"addr": {
 							"type": "string",
-							"defaultValue": "localhost:9001"
+							"defaultValue": "localhost:9999"
 						}
 					}
 				},
@@ -50,29 +52,24 @@ class Network {
 	}	
 
 	webAvailable(){
-		console.log("jkhjkhkjh");
-		t = "WebSocket" in window;
-		console.log(t);
 		return "WebSocket" in window;
 	}
 
 	open(addr){
 		// Let us open a web socket
-		console.log("1111");
-		const ws = new WebSocket("ws://"+addr);
-		console.log("2222");
-		this.ws=ws;
+		this.ws = new WebSocket("ws://"+addr);
 		ws.onopen = function() {
             
             // Web Socket is connected, send data using send()
             ws.send("Message to send");
+            console.log("Message is sent...");
+
             alert("Message is sent...");
          };
 			
          ws.onmessage = function (evt) { 
             var received_msg = evt.data;
-		 		console.log("received_msg: "+received_msg);
-
+            console.log("received_msg: "+received_msg);
             alert("Message is received...");
          };
 			
