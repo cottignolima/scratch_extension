@@ -73,9 +73,9 @@ constructor (runtime) {
 	open(addr){
 		// Let us open a web socket
 		console.log("1111");
-		this.ws = new WebSocket("ws://localhost:9001);
+		const myws = new WebSocket("ws://localhost:9001);
 		console.log("2222");
-		ws.onopen = function() {
+		myws.onopen = function() {
             
             // Web Socket is connected, send data using send()
             ws.send("Message to send");
