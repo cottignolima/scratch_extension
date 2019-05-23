@@ -52,7 +52,17 @@ class Network {
 	                "text": "quando arriva messaggio",
 	                "arguments": {}
 				},
-				
+				{
+	                "opcode": "messaggio",
+	                "blockType": "reporter",
+	                "text": "[msg]",
+	                "arguments": {
+	                    "msg": {
+	                        "type": "string",
+	                        "defaultValue": ""
+	                    }
+	                }
+				},
 				
 				],
 				"menus": { //we will get back to this in a later tutorial
@@ -60,6 +70,10 @@ class Network {
 		};
 	}	
 
+	messaggio(){
+		return this.msg;
+	}
+	
 	webAvailable(){
 		return "WebSocket" in window;
 	}
@@ -83,8 +97,6 @@ class Network {
 			console.log("mando messaggio");
 			myws.send("Message to send");
 			console.log("Message is sent...");
-
-			alert("Message is sent...");
 		};
 
 		console.log("dddddddd");
@@ -92,13 +104,12 @@ class Network {
 		this.ws.onmessage = function (evt) { 
 			var received_msg = evt.data;
 			console.log("received_msg: "+received_msg);
-			alert("Message is received...");
+			this.msg=received_msg;
 		};
 
 		this.ws.onclose = function() { 
-
 			// websocket is closed.
-			alert("Connection is closed..."); 
+			
 		};
 	}
 
