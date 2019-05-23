@@ -75,7 +75,7 @@ class Network {
 	
 	whenArriveMsg(){
 		console.log("lunghezza stringa: "+this.msg.length);
-		return true;
+		return false;
 /*		
 		if(this.msg.length!=0){
 			console.log("whenArriveMsg");
