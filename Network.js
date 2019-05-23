@@ -55,13 +55,8 @@ class Network {
 				{
 	                "opcode": "messaggio",
 	                "blockType": "reporter",
-	                "text": "[msg]",
-	                "arguments": {
-	                    "msg": {
-	                        "type": "string",
-	                        "defaultValue": ""
-	                    }
-	                }
+	                "text": "messaggio ricevuto",
+	                "arguments": {}
 				},
 				
 				],
