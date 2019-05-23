@@ -74,7 +74,11 @@ class Network {
 	}
 	
 	whenArriveMsg(){
-		console.log("whenArriveMsg");
+		if(this.msg.length!=0){
+			console.log("whenArriveMsg");
+			return true;
+		}
+		return false;
 	}
 
 	open({addr}){
