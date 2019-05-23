@@ -81,7 +81,7 @@ class Network {
 
 			// Web Socket is connected, send data using send()
 			console.log("mando messaggio");
-			this.ws.send("Message to send");
+			myws.send("Message to send");
 			console.log("Message is sent...");
 
 			alert("Message is sent...");
