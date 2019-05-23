@@ -1,7 +1,9 @@
 class Network {
 
-
-
+	constructor(){
+		this.msg="";
+	}
+	
 	getInfo() {
 		return {
 			"id": "Network",
@@ -21,7 +23,7 @@ class Network {
 					"arguments": {
 						"addr": {
 							"type": "string",
-							"defaultValue": "localhost:8083"
+							"defaultValue": "localhost:8080/WebSocket/endpoint"
 						}
 					}
 				},
@@ -44,7 +46,14 @@ class Network {
 						}
 					}
 				},
-
+				{
+	                "opcode": "whenArriveMsg",
+	                "blockType": "hat",
+	                "text": "quando arriva messaggio",
+	                "arguments": {}
+				},
+				
+				
 				],
 				"menus": { //we will get back to this in a later tutorial
 				}
@@ -53,6 +62,10 @@ class Network {
 
 	webAvailable(){
 		return "WebSocket" in window;
+	}
+	
+	whenArriveMsg(){
+		console.log("whenArriveMsg");
 	}
 
 	open({addr}){
@@ -65,28 +78,28 @@ class Network {
 		this.ws=myws;
 		console.log("cccccc");
 		this.ws.onopen = function() {
-            
-            // Web Socket is connected, send data using send()
-			console.log("mando messaggio");
-            this.ws.send("Message to send");
-            console.log("Message is sent...");
 
-            alert("Message is sent...");
-         };
-		
+			// Web Socket is connected, send data using send()
+			console.log("mando messaggio");
+			this.ws.send("Message to send");
+			console.log("Message is sent...");
+
+			alert("Message is sent...");
+		};
+
 		console.log("dddddddd");
-			
-         this.ws.onmessage = function (evt) { 
-            var received_msg = evt.data;
-            console.log("received_msg: "+received_msg);
-            alert("Message is received...");
-         };
-			
-         this.ws.onclose = function() { 
-            
-            // websocket is closed.
-            alert("Connection is closed..."); 
-         };
+
+		this.ws.onmessage = function (evt) { 
+			var received_msg = evt.data;
+			console.log("received_msg: "+received_msg);
+			alert("Message is received...");
+		};
+
+		this.ws.onclose = function() { 
+
+			// websocket is closed.
+			alert("Connection is closed..."); 
+		};
 	}
 
 	onopen(msg){
@@ -94,11 +107,11 @@ class Network {
 	}
 
 	onmessage(){
-		
+
 	}
 
 	onclose(){
-		
+
 	}
 
 	sendcoord({id, x, y}) {
