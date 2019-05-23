@@ -74,11 +74,14 @@ class Network {
 	}
 	
 	whenArriveMsg(){
+		console.log("lunghezza stringa: "+this.msg.length);
+/*		
 		if(this.msg.length!=0){
 			console.log("whenArriveMsg");
 			return true;
 		}
 		return false;
+*/		
 	}
 
 	open({addr}){
